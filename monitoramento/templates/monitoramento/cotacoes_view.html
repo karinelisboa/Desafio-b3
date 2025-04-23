@@ -1,0 +1,39 @@
+<h2>Cotações de {{ ativo.codigo }} - {{ ativo.nome }}</h2>
+
+<div class="info-tunel">
+    <h3>Informações do Túnel</h3>
+    <p>Tipo: {{ ativo.get_tipo_tunel_display }}</p>
+    
+    {% if ativo.tipo_tunel == 'estatico' %}
+        <p>Limite Inferior: R$ {{ ativo.limite_inferior }}</p>
+        <p>Limite Superior: R$ {{ ativo.limite_superior }}</p>
+    {% else %}
+        <p>Percentual do Túnel: {{ ativo.percentual_tunel }}%</p>
+    {% endif %}
+</div>
+
+<div class="cotacoes-container">
+    <h3>Cotações Registradas</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Data/Hora</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cotacao in cotacoes %}
+                <tr>
+                    <td>{{ cotacao.data_hora }}</td>
+                    <td>R$ {{ cotacao.preco }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2">Nenhuma cotação registrada ainda</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<a href="{% url 'listar_ativos' %}">Voltar para Lista de Ativos</a>

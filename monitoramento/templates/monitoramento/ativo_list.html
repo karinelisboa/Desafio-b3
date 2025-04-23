@@ -1,0 +1,11 @@
+<h2>Ativos Monitorados</h2>
+<a href="{% url 'criar_ativo' %}">Novo Ativo</a>
+<ul>
+  {% for ativo in object_list %}
+    <li>
+      {{ ativo.codigo }} - {{ ativo.nome }} 
+      <a href="{% url 'editar_ativo' ativo.pk %}">Editar</a>
+      <a href="{% url 'visualizar_cotacoes' ativo.pk %}">Ver Cotações</a>
+    </li>
+  {% endfor %}
+</ul>

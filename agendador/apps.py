@@ -6,7 +6,7 @@ class AgendadorConfig(AppConfig):
 
     # Inicializa o agendador quando o app Django estiver pronto.
     def ready(self):
-        from monitoramento.buscador import buscar_cotacoes_e_salvar  # importa só quando tudo estiver carregado
+        from monitoramento.buscador import buscar_cotacoes_e_salvar 
 
         scheduler = BackgroundScheduler()
         scheduler.add_job(buscar_cotacoes_e_salvar, 'interval', minutes=1)
