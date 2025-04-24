@@ -1,6 +1,8 @@
 # 💰 Investidor B3 - Desafio de Desenvolvimento
 
-Este projeto foi desenvolvido com o objetivo de auxiliar investidores a tomarem decisões de compra e venda de ativos da B3 com base em cotações atualizadas e regras de túnel de preço.
+Este projeto foi desenvolvido com o objetivo de auxiliar investidores a tomarem decisões de compra e venda de ativos da B3 com base em cotações atualizadas e regras de túnel de preço. Mais informações abaixo da imagem:
+
+![](https://i.imgur.com/6nooQlC.png)
 
 ## 📌 Descrição
 
